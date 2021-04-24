@@ -23,8 +23,10 @@ class EmployeeArgs:
         if params["target"] >= 6:
             print("The weekly target has been achieved by", params["name"])
         else:
-            print("The weekly target has not been achieved by", params["name"])
+            print("The weekly target has not been achieved by {0} for month {1}".format( params["name"], params["month"]))
 
 
 employee2 = EmployeeArgs()
-employee2.hasTargetAchievedNew(name="Dipesh", target=4)
+employee2.hasTargetAchievedNew(name="Dev", target=4, month="April")
+
+
