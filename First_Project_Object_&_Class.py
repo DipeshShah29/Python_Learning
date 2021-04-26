@@ -23,10 +23,28 @@ class EmployeeArgs:
         if params["target"] >= 6:
             print("The weekly target has been achieved by", params["name"])
         else:
-            print("The weekly target has not been achieved by {0} for month {1}".format( params["name"], params["month"]))
+            print(
+                "The weekly target has not been achieved by {0} for month {1}".format(
+                    params["name"], params["month"]
+                )
+            )
 
 
 employee2 = EmployeeArgs()
 employee2.hasTargetAchievedNew(name="Dev", target=4, month="April")
+employee2.hasTargetAchievedNew(name="Admin", target=7)
+
+# Using Dictionary as a parameter object
+class EmployeeDict:
+    def hasTargetAchievedDict(self, dict):
+        from datetime import datetime
+        import calendar
+
+        if calendar.month_name[datetime.today().month] == dict["Month"]:
+            for key in dict:
+                print(key, dict[key])
 
 
+value = {"Name": "Dipesh", "Target": 6, "Month": "April"}
+e1 = EmployeeDict()
+e1.hasTargetAchievedDict(value)
